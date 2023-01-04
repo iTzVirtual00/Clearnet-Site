@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'includes/up.html' %}
+
+<div class="full center">
+    <h1 class="main-title text-center text-neon pad-top2">CypherPunk Radio</h1>
+    <h2 class="text-center text-neon">Live, private, secure & unstoppable.</h2>
+    <div class="grid pad3">
+        <ul class="grid-row">
+            <li><a href="/songs" class="text-nodec">Songs</a></li>
+            <li><a href="/community" class="text-nodec">Community</a></li>
+        </ul>
+        <ul>
+            <li><a href="/about" class="text-nodec">Listen</a></li>
+            <li><a href="/mirrors" class="text-nodec">Mirrors</a></li>
+        </ul>    
+        <ul>
+            <li><a href="/donate" class="text-nodec">Donate</a></li>
+            <li><a href="/source" class="text-nodec">Source Code</a></li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

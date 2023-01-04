@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'includes/up.html' %}
+
+<div class="full center">
+    <h1 class="h1-resize">Source code</h1>
+    <h2>Code mirrors</h2>
+    <div class="flex flex-gap flex-center" style="padding: 1rem;">
+        <a href="https://github.com/CypherPunkRadio" target="_blank">
+            <img src="../static/github.png" alt="GitHub Logo" class="icon">
+        </a>
+        <a href="https://gitea.com/CypherPunkRadio" target="_blank">
+            <img src="../static/gitea.png" alt="Gitea Logo" class="icon" style="width: 80px;">
+        </a>
+    </div>
+</div>
+
+{% endblock %}

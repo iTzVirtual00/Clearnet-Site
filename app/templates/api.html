@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'includes/up.html' %}
+
+<div class="full center">
+    <h1 class="text-center">API</h1>
+    <div class="column text-change">
+        <div>
+            <h2>Get all songs: <a href="/api/all" class="a">/api/all</a></h2>
+        </div>
+        <div>
+            <h2>Search for a song: <a href="/api/search/" class="a">/api/search/{title}</a></h2>
+        </div>
+        <div>
+            <h2>Get currently playing song: <a href="/api/song" class="a">/api/song</a></h2>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

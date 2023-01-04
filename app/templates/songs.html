@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'includes/up.html' %}
+
+<div class="fixed-bottom fixed-center">
+    <div class="flex">
+        <div class="nav">
+            <a href="#bottom" class="text-nodec">Search song</a>
+        </div>
+        <div class="nav">
+            <a href="#top" class="text-nodec">Back to top</a>
+        </div>
+    </div>
+</div>
+
+<div class="scroll">
+    <div class="scroll-item flex-center" id="top">
+        <form action="/songs" method="POST">
+            <h1 class="h1-resize text-center">Add song</h1>
+            <div class="flex flex-center">
+                <input type="search" placeholder="YouTube ID" name="yt-id" required>
+                <button>Add</button>
+            </div>
+            <div class="text-center pad">
+                {% for message in  get_flashed_messages() %}
+                    {% if ':)' in message %}
+                        <h2 style="color: green;">{{ message }}</h2>
+                    {% elif ':(' in message %}
+                        <h2 style="color: red;">{{ message }}</h2>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+    <div class="scroll-item flex-center" id="bottom">
+        <div class="column">
+            <form action="/songs/search" method="GET">
+                <h1 class="h1-resize text-center">Search song</h1>
+                <div class="flex flex-center">
+                    <input type="search" placeholder="Song title" name="title" required>
+                    <button>Search</button>
+                    {% if songs|length == 1 and request.args %}
+                        <a href="/songs#bottom" class="a" style="margin-left: 10px;">Clear search</a>
+                    {% endif %}
+                </div>
+                <div class="text-center pad">
+                    {% for message in  get_flashed_messages() %}
+                        {% if 'not found' in message %}
+                            <h2 style="color: red;">{{ message }}</h2>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </form>
+            {% if songs %}
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th style="color: black;">Title</th>
+                            <th style="color: black;">ID</th>
+                            <th style="color: black;">Date</th>
+                        </tr>
+                        {% for song_id in songs %}
+                            <tr>
+                                <th>{{ songs.get(song_id).get('title') }}</th>
+                                <th>
+                                    <a href="https://yewtu.be/watch?v={{ song_id }}" target="_blank" class="a">{{ song_id }}</a>
+                                </th>
+                                <th>{{ songs.get(song_id).get('added') }}</th>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% else %}
+                <i>
+                    <h2 class="text-center text-underline">Fill up this emptyness...</h2>
+                </i>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

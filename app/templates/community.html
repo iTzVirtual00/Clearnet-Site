@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'includes/up.html' %}
+
+<div class="full center">
+    <h1 class="h1-resize ">Community</h1>
+    <h2>Connect with other CypherPunks</h2>
+    <div class="flex flex-gap flex-center" style="padding: 1rem;">
+        <a href="https://t.me/cypherpunkradio" target="_blank">
+            <img src="../static/telegram.png" alt="Telegram Logo" class="icon">
+        </a>
+        <a href="xmpp:cypherpunk-radio@muc.xmpp.is?join" target="_blank">
+            <img src="../static/xmpp.png" alt="XMPP Logo" class="icon" style="width: 80px;">
+        </a>
+        <a href="webchat.oftc.net/?channels=cypherpunk-radio" target="_blank">
+            <img src="../static/oftc.png" alt="OFTC Logo" class="icon">
+        </a>
+        <a href="https://matrix.to/#/#cypherpunk-radio:monero.social" target="_blank">
+            <img src="../static/matrix.png" alt="Matrix Logo" class="icon" style="width: 100px;">
+        </a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'includes/up.html' %}
+
+<div class="fixed-bottom fixed-center">
+    <div class="flex">
+        <div class="nav">
+            <a href="#listen" class="text-nodec">How to listen</a>
+        </div>
+        <div class="nav">
+            <a href="#top" class="text-nodec">Back to top</a>
+        </div>
+    </div>
+</div>
+
+<div class="scroll">
+    <div class="scroll-item flex-center text-center" id="top">
+        <div>
+            <h1>About</h1>
+            <h2 style="margin-bottom: 10px;">What's CypherPunk Radio?</h2>
+            <p class="p">
+                CypherPunk Radio is an indipendent internet radio
+                focused on being <span class="text-underline">private, secure & unstoppable</span>.
+            </p>
+            <h2 style="margin-top: 10px; margin-bottom: 10px;">What will we hear?</h2>
+            <p class="p">
+                Music of a lot of different genres, live podcasts
+                and Monero talking :)
+            </p>
+        </div>
+    </div>
+    
+    <div class="scroll-item flex-center text-center" id="listen">
+        <div>
+            <div class="column flex-gap">
+                <h1 class="h1-resize text-inverted">How to listen to us?</h1>
+                <div class="flex flex-center flex-gap">
+                    <a href="#cli">CLI</a>|
+                    <a href="#gui">GUI</a>|
+                    <a href="#android">Android</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-item flex-center text-center" id="cli">
+        <div class="column flex-center flex-gap">
+            <h2 class="h2">MPlayer</h2>
+            <div class="flex-change flex-center flex-sgap">
+                <details>
+                    <summary>Tor</summary>
+                    <p class="dp text-left">
+                        - Install<a href="https://github.com/dgoulet/torsocks" class="a">torsocks</a>
+                        <br>
+                        - Run: <code>torsocks mplayer -prefer-ipv4 http://channel.tormirror</code>
+                    </p>
+                </details>
+                <details>
+                    <summary>I2P</summary>
+                        <p class="dp text-left">
+                            - Install<a href="https://i2pd.readthedocs.io/en/latest/user-guide/install/" class="a">i2pd</a>
+                            <br>
+                            - Run: <code>export http_proxy="http://127.0.0.1:4444"</code>
+                            <br>
+                            - Run: <code>mplayer -prefer-ipv4 http://i2pmirror/channel</code>
+                            <br>
+                        </p>
+                </details>
+                <details>
+                    <summary>Issues</summary>
+                    <p class="dp text-left">
+                        - Not consistent stream? <br>
+                        &nbsp; Put <code>-cache-min 99</code> after <code>mplayer</code>
+                    </p>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-item flex-center text-center" id="gui">
+        <div class="column flex-center flex-gap">
+            <h2 class="h2">VLC</h2>
+            <div class="flex-change flex-center flex-sgap">
+                <details>
+                    <summary>Tor</summary>
+                    <p class="dp text-left">
+                        - Install <a href="https://support.torproject.org/relay-operators/packaged-tor/" class="a">Tor</a>
+                        <br>
+                        &nbsp; - <kbd>CTRL</kbd> + <kbd>P</kbd> on the main screen
+                        <br>
+                        &nbsp;&nbsp; Show setting in the left corner to <code>All</code>
+                        <br>
+                        &nbsp;&nbsp; > <code>Input / Codecs</code>
+                        <br>
+                        &nbsp;&nbsp; scroll till you find <code>SOCKS server</code> input <code>127.0.0.1:9050</code>
+                        <br>
+                        &nbsp; - <kbd>CTRL</kbd> + <kbd>N</kbd> on the main screen
+                        and input <code>http://channel.tormirror</code>.
+                    </p>
+                </details>
+                <details>
+                    <summary>I2P</summary>
+                    <p class="dp text-left">
+                        - Install <a href="https://i2pd.readthedocs.io/en/latest/user-guide/install/" class="a">i2pd</a>
+                        <br>
+                        &nbsp; - <kbd>CTRL</kbd> + <kbd>P</kbd> on the main screen
+                        <br>
+                        > <code>Input / Codecs</code>
+                        <br>
+                        &nbsp; scroll till you find <code>HTTP proxy</code> input <code style="font-size: .95em;">http://127.0.0.1:4444</code>
+                        <br>
+                        &nbsp; - <kbd>CTRL</kbd> + <kbd>N</kbd> on the main screen
+                        and input <code>http://i2pmirror/channel</code>.
+                    </p>
+                </details>
+                <details>
+                    <summary>Issues</summary>
+                    <p class="dp text-left">
+                        Nothing here yet...
+                    </p>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-item flex-center text-center" id="android">
+        <div class="column flex-center flex-gap">
+            <h2 class="h2">Android</h2>
+            <div class="flex-change flex-center flex-sgap">
+                <details>
+                    <summary>Tor</summary>
+                    <p class="dp text-left">
+                        - Open F-droid > Settings > Repositories
+                        <br>
+                        &nbsp; - Enable <code>Guarding Project Official Releases</code>
+                        <br>
+                        - Search for <code>Orbot</code> and download
+                        <br>
+                        - Search for <code><a href="https://f-droid.org/en/packages/org.y20k.transistor/" class="a">Transistor</a></code> and download
+                        <br>
+                        - Open and turn on Orbot
+                        <br>
+                        &nbsp; - Enable <code>VPN mode</code>
+                        <br>
+                        &nbsp; Under <code>Tor-enabled Apps</code> search for <code>Transistor</code>
+                        <br>
+                        - Open Transistor and <code>Add new station</code>.
+                    </p>
+                </details>
+                <details>
+                    <summary>I2P</summary>
+                    <p class="dp text-left">
+                        Nothing here yet...
+                    </p>
+                </details>
+                <details>
+                    <summary>Issues</summary>
+                    <p class="dp text-left">
+                        Nothing here yet...
+                    </p>
+                </details>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
